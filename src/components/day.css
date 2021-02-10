@@ -1,0 +1,13 @@
+.wrapper-day {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  outline: 1px solid grey;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+}

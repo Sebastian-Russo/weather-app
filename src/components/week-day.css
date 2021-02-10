@@ -1,0 +1,29 @@
+.week-day {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 15em;
+  width: 7em;
+  /* flex: 1; */
+  outline: 1px solid grey;
+  position: relative;
+}
+.weed-day:hover {
+  cursor: pointer;
+}
+
+.wrapper-week-day {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box-1 {
+  position: absolute;
+  top: 2px;
+}
+
+.box-3 {
+  position: absolute;
+  bottom: 5px;
+}

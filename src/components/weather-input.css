@@ -1,0 +1,8 @@
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 4em;
+  outline: 1px solid grey;
+  /* width: 100%; */
+}
