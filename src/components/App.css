@@ -5,15 +5,17 @@
   flex-direction: column;
 }
 
-.wrapper-forcast {
+/* .wrapper-forcast {
   display: flex;
   justify-content: center;
   height: 100px;
-  /* width: 600px; */
-}
+  width: 600px;
+} */
 
-.row {
+/* .row {
   display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   flex-direction: column;
-}
+} */

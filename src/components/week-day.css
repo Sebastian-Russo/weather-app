@@ -1,3 +1,15 @@
+.wrapper-week-day {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
 .week-day {
   display: flex;
   justify-content: center;
@@ -12,18 +24,16 @@
   cursor: pointer;
 }
 
-.wrapper-week-day {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .box-1 {
   position: absolute;
   top: 2px;
 }
 
 .box-3 {
+  position: absolute;
+  bottom: 25px;
+}
+.box-4 {
   position: absolute;
   bottom: 5px;
 }
