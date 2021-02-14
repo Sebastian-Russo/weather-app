@@ -34,10 +34,26 @@ function App() {
       <div className="App">
         <WeatherInput fetchData={fetchData}/>
 
-        <WeekDay hanldeSingleDay={hanldeSingleDay} items={items} />
-        <Day day={day} />
-      
-        {/* <Route path="/:day" component={Day} /> */}
+        {/* <WeekDay hanldeSingleDay={hanldeSingleDay} items={items} /> */}
+        {/* <Day day={day} /> */}
+
+      <Switch>
+        <Route 
+          exact
+          path="/forecast" 
+          render={props=>
+            <WeekDay {...props}
+              hanldeSingleDay={hanldeSingleDay} 
+              items={items} />
+          }
+        />
+        <Route 
+          path="/forecast/:day" 
+          render={props =>
+            <Day {...props} day={day} />
+          }  
+        />
+      </Switch>
       
       </div>
     </Router>

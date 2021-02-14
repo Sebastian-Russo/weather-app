@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import './weather-input.css';
 
 
 export const WeatherInput = ({fetchData}) => {
   const [input, setInput] = useState('');
+  const history = useHistory();
   
   const handleSubmit = e => {
     e.preventDefault();
@@ -15,6 +17,7 @@ export const WeatherInput = ({fetchData}) => {
       city: words.slice(1).reverse().join(' ')
     }
     fetchData(obj)
+    history.push('/forecast');
   }
   
 

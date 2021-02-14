@@ -1,4 +1,4 @@
-.wrapper-week-day {
+.container-week-day {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,7 +10,7 @@
   flex-direction: row;
 }
 
-.week-day {
+.wrapper-week-day {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -36,4 +36,9 @@
 .box-4 {
   position: absolute;
   bottom: 5px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
