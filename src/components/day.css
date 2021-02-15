@@ -1,13 +1,40 @@
-.wrapper-day {
+.container-hourly {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px;
-  outline: 1px solid grey;
+  flex-direction: column;
 }
 
-.container {
+.row {
   display: flex;
-  font-size: 20px;
-  flex-direction: column;
+  flex-direction: row;
+}
+
+.wrapper-hourly {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 15em;
+  width: 7em;
+  position: relative;
+  margin: 20px;
+  color: aliceblue;
+  font-size: 1.2em;
+}
+.wrapper-hourly:hover {
+  transform: scale(1.2);
+}
+
+.box-1 {
+  position: absolute;
+  top: 2px;
+}
+
+.box-3 {
+  position: absolute;
+  bottom: 25px;
+}
+.box-4 {
+  position: absolute;
+  bottom: 5px;
 }

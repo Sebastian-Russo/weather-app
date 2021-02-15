@@ -1,0 +1,13 @@
+.btn {
+  background-color: skyblue;
+  color: aliceblue;
+  border: lightblue;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 5px;
+}
+
+.btn:hover {
+  background-color: aliceblue;
+  color: skyblue;
+}

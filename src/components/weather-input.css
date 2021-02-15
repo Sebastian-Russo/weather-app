@@ -3,6 +3,9 @@ form {
   justify-content: center;
   align-items: center;
   height: 4em;
-  outline: 1px solid grey;
-  /* width: 100%; */
+  font-size: 1.5em;
+}
+
+form > input {
+  margin: 3px;
 }

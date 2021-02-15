@@ -4,7 +4,7 @@ import axios from 'axios';
 import './App.css';
 import { WeatherInput } from './weather-input';
 import { WeekDay } from './week-day';
-import { Day } from './day';
+import { Hourly } from './day';
 
 
 function App() {
@@ -34,26 +34,23 @@ function App() {
       <div className="App">
         <WeatherInput fetchData={fetchData}/>
 
-        {/* <WeekDay hanldeSingleDay={hanldeSingleDay} items={items} /> */}
-        {/* <Day day={day} /> */}
-
-      <Switch>
-        <Route 
-          exact
-          path="/forecast" 
-          render={props=>
-            <WeekDay {...props}
-              hanldeSingleDay={hanldeSingleDay} 
-              items={items} />
-          }
-        />
-        <Route 
-          path="/forecast/:day" 
-          render={props =>
-            <Day {...props} day={day} />
-          }  
-        />
-      </Switch>
+        <Switch>
+          <Route 
+            exact
+            path="/forecast" 
+            render={props=>
+              <WeekDay {...props}
+                hanldeSingleDay={hanldeSingleDay} 
+                items={items} />
+            }
+          />
+          <Route 
+            path="/forecast/:day" 
+            render={props =>
+              <Hourly {...props} day={day} items={items}/>
+            }  
+          />
+        </Switch>
       
       </div>
     </Router>

@@ -16,12 +16,14 @@
   align-items: center;
   height: 15em;
   width: 7em;
-  /* flex: 1; */
-  outline: 1px solid grey;
   position: relative;
+  margin: 20px;
+  color: aliceblue;
+  font-size: 1.2em;
 }
-.weed-day:hover {
+.wrapper-week-day:hover {
   cursor: pointer;
+  transform: scale(1.2);
 }
 
 .box-1 {

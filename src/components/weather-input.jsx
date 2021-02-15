@@ -33,6 +33,7 @@ export const WeatherInput = ({fetchData}) => {
         type="submit" 
         value="Submit" 
         disabled={input === ""}
+        className="btn"
       />
     </form>
   );

@@ -1,38 +1,58 @@
 import { useHistory } from 'react-router-dom'; 
 import './day.css';
+import { imageForecast } from '../helper/imageForcast'
 
-export const Day = ({day}) => {
+export const Hourly = ({day, items}) => {
   const history = useHistory();
 
   if (!day) return (<div></div>)
 
-  let dateEdit = new Date(day[0].dt * 1000)
-  dateEdit = dateEdit.toString()
-  let time = dateEdit.slice(15, 21)
-  let date = dateEdit.slice(0,15)
-  let tempHigh = `High: ${Math.round(((day[0].main.temp_max - 273.15) * 9/5 + 32)*10)/10}`;
-  let tempLow = `Low: ${Math.round(((day[0].main.temp_min - 273.15) * 9/5 + 32)*10)/10}`;
-  
-  return (
-    <div>
-      <div className="wrapper-day">
-        <div className="container">
-          <div>{date}</div>
-          <div>{time}</div>
-          <div>image<img /></div>
-          <div>{tempHigh}</div>
-          <div>{tempLow}</div>
-          <div>hourly forecast</div>
+  // find date of selected day, match to list of 40 dates, use that index for the start of hourly forecast 
+  const date = day[0].dt;
+  const listOfDates = items.list.map((x,i) => x.dt);
+  let indexStart = listOfDates.findIndex(d => d === date)
+  console.log(indexStart)
+
+  // indexStart begins index, add 5 consecutive numbers to it
+  let hourlyArray = []
+  let length = indexStart + 5;
+  for (let i=indexStart; i< length; i++) { 
+    hourlyArray.push(indexStart)
+    indexStart++
+  }
+
+  let hourly = hourlyArray.map(item => items.list[item]);
+
+  const hourlyDay = hourly.map((item,i) => {
+    let date = new Date(item.dt * 1000);
+    let day = date.toString().slice(0,3);
+    let forecast1 = item.weather[0].main; // Clouds/Snow/Rain/Clear/Thunderstorm
+    let pictureForecast = imageForecast(forecast1)
+    let tempHigh = `High: ${Math.round(((item.main.temp_max - 273.15) * 9/5 + 32)*10)/10}`;
+    let tempLow = `Low: ${Math.round(((item.main.temp_min - 273.15) * 9/5 + 32)*10)/10}`;
+    return (
+      <div  key={i} >
+        <div className="wrapper-hourly">
+              <div className="box-1">{day}</div>
+              <div className="box-3">{tempHigh}</div>
+              <div className="box-4">{tempLow}</div>
+              <img src={pictureForecast} alt="weather" width="100%"/>
         </div>
       </div>
-      <button onClick={() => history.goBack()}>Back</button>
+    )
+  })
+
+  return (
+    <div className="container-hourly">
+      <div>You searched for the hourly forecast in {items.city.name}</div>
+      <div className="row">
+        {hourlyDay}
+      </div>
+        <button 
+          className="btn"
+          onClick={() => history.goBack()}
+        >Back to 5 day forecast</button>
     </div>
   )
-}
 
-/*
-hourly forecast 
-high/low temp, 
-image for sunny/rainy/cloudy/snowy, 
-look like social cards 
-*/
+}
