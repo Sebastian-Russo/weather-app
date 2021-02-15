@@ -13,9 +13,9 @@ function App() {
 
   // openweathermap 
   const fetchData = async (location) => {
-    const API_URL = 'http://api.openweathermap.org/data/2.5/forecast';
+    const API_URL = 'https://api.openweathermap.org/data/2.5/forecast';
     const API_KEY = process.env.REACT_APP_API_KEY;
-    const options = `${API_URL}?q=${location.city},${location.state},US&appid=${API_KEY}`;
+    const options = `${API_URL}?q=${location.city},${location.state},US&appid=${API_KEY}`
     try {
       const {data} = await axios.get(options);
       setItems(data)
