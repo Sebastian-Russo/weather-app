@@ -16,11 +16,15 @@ export const WeatherInput = ({fetchData}) => {
       state: words[0],
       city: words.slice(1).reverse().join(' ')
     }
-    fetchData(obj)
+    console.log(obj)
+    if (obj.state.length > 2 || obj.state.length < 2) {
+      alert('use to letters for state')
+    } else {
+      fetchData(obj)
+    }
     history.push('/forecast');
   }
   
-
   return (
     <form onSubmit={handleSubmit}>
       <label>Enter City and State (two letters for state)</label>

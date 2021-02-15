@@ -21,6 +21,7 @@ function App() {
       setItems(data)
     } catch (err) {
       console.error(err)
+      alert('Please check spelling of city and state.')
     }
   }
 
