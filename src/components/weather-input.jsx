@@ -31,6 +31,7 @@ export const WeatherInput = ({fetchData}) => {
       <input 
         type="text"
         value={input}
+        placeholder="city, state"
         onChange={e => setInput(e.target.value)}
       />
       <input 
