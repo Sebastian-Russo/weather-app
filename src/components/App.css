@@ -1,6 +1,6 @@
 .App {
   display: flex;
-  height: 100vh;
+  height: vh;
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
@@ -12,18 +12,3 @@
     rgba(0, 212, 255, 1) 100%
   );
 }
-
-/* .wrapper-forcast {
-  display: flex;
-  justify-content: center;
-  height: 100px;
-  width: 600px;
-} */
-
-/* .row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  flex-direction: column;
-} */

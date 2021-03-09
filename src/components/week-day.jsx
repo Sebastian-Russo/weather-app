@@ -20,7 +20,7 @@ export const WeekDay = ({hanldeSingleDay, items}) => {
     let tempHigh = `High: ${Math.round(((item.main.temp_max - 273.15) * 9/5 + 32)*10)/10}`;
     let tempLow = `Low: ${Math.round(((item.main.temp_min - 273.15) * 9/5 + 32)*10)/10}`;
     return (
-      <div  key={i} >
+      <div className="mobile" key={i} >
         <Link to={`/forecast/${day}`}>        
         <div className="wrapper-week-day" 
           onClick={(e) => hanldeSingleDay(e,item)}>
